@@ -45,7 +45,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Game.fs" />
     <Compile Include="Player.fs" />
+    <Compile Include="Util.fs" />
     <Compile Include="Library1.fs" />
     <None Include="Script.fsx" />
   </ItemGroup>
@@ -65,6 +67,9 @@
     </Otherwise>
   </Choose>
   <Import Project="$(FSharpTargetsPath)" />
+  <PropertyGroup>
+    <PostBuildEvent>del $(TargetDir)\UnityEngine.*</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
